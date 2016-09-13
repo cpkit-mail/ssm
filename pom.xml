@@ -36,6 +36,11 @@
 		<mybatis-ehcache.version>1.0.0</mybatis-ehcache.version>
 		<!-- ehcache -->
 		<ehcache.version>3.1.1</ehcache.version>
+		<!-- ehcache-core -->
+		<ehcache-core.version>2.6.11</ehcache-core.version>
+		<!-- Spring+Ehcache -->
+		<ehcache-spring-annotations.version>1.2.0</ehcache-spring-annotations.version>
+		<guava.version>19.0</guava.version>
 
 		<!-- mysql -->
 		<mysql.version>5.1.39</mysql.version>
@@ -184,6 +189,24 @@
 			<groupId>org.ehcache</groupId>
 			<artifactId>ehcache</artifactId>
 			<version>${ehcache.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-core</artifactId>
+			<version>${ehcache-core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.googlecode.ehcache-spring-annotations</groupId>
+			<artifactId>ehcache-spring-annotations</artifactId>
+			<version>${ehcache-spring-annotations.version}</version>
 		</dependency>
 
 

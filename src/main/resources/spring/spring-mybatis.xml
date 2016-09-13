@@ -118,10 +118,5 @@
         <aop:advisor pointcut-ref="txPointcut" advice-ref="txAdvice"/>
     </aop:config>
 
-    <!-- 使用ehcache缓存 -->
-    <bean id="ehCacheManager"
-       class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-        <property name="configLocation" value="classpath:ehcache/ehcache.xml"/>
-    </bean>
 
 </beans>

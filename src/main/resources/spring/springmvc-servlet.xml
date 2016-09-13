@@ -112,5 +112,7 @@
     <import resource="spring-validator.xml"/>
     <!-- 定时器 -->
     <import resource="spring-scheduled.xml"/>
+    <!-- 缓存 -->
+    <import resource="spring-ehcache.xml"/>
 
 </beans>

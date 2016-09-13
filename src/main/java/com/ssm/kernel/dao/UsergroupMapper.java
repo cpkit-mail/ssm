@@ -1,11 +1,12 @@
 package com.ssm.kernel.dao;
 
-import com.ssm.kernel.model.Usergroup;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+
+import com.ssm.kernel.model.Usergroup;
 
 public interface UsergroupMapper {
     /**

@@ -1,6 +1,5 @@
 package com.ssm.kernel.dao;
 
-import com.ssm.kernel.model.User;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
@@ -8,6 +7,8 @@ import org.apache.ibatis.annotations.Options.FlushCachePolicy;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+
+import com.ssm.kernel.model.User;
 
 public interface ExampleMapper {
     /**
@@ -67,6 +68,7 @@ public interface ExampleMapper {
         "from user",
         "where id = #{id,jdbcType=INTEGER}"
     })
+    // 不使用cache
     @Options(useCache = false, timeout = 10000, flushCache = FlushCachePolicy.FALSE)
     @ResultMap("com.ssm.kernel.dao.UserMapper.BaseResultMap")
     User selectByPrimaryKey(Integer id);
