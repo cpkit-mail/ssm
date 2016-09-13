@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/mvc
+           http://www.springframework.org/schema/mvc/spring-mvc.xsd
+  ">
+
+<!-- spring 默认代码式验证 -->
+    <!-- 自定义全局的Validator -->
+    <!-- 通过mvc:annotation-driven的validator属性可以指定全局的Validator -->
+    <!-- <mvc:annotation-driven validator="userValidator" /> -->
+
+    <!-- <bean id="userValidator" class="com.ssm.validator.web.validator.UserValidator"/> -->
+
+
+
+<!-- spring 注解式验证 -->
+<!-- validation-api-1.0.0.GA.jar     JSR-303规范API包 -->
+<!-- hibernate-validator.jar        Hibernate 参考实现 -->
+    <!-- 自动检测JSR-303数据验证的规范并自动启用对JSR-303的支持，把对应的校验错误信息放到Spring的Errors对象中 -->
+    <!-- springmvc-servlet中已经添加 -->
+    <!-- <mvc:annotation-driven/> -->
+
+    <!-- 注册validator，使用Hibernate-validator实现 -->
+    <bean id="validator" 
+            class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" >
+        <property name="providerClass" value="org.hibernate.validator.HibernateValidator" />
+
+        <!-- 如果不加默认到 使用classpath下的 ValidationMessages.properties -->
+        <property name="validationMessageSource" ref="validationMessageSource" />
+    </bean>
+
+    <!-- 自定义全局的validator配置 -->
+    <!-- 如果注册了validator的bean，但是没有指定当前全局使用validator，则会使用默认的配置 -->
+    <mvc:annotation-driven validator="validator"/>
+
+</beans>

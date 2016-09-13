@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/mvc
+           http://www.springframework.org/schema/mvc/spring-mvc.xsd
+  ">
+
+
+    <!-- 注册数据验证信息文件 -->
+    <bean id="validationMessageSource" 
+            class="org.springframework.context.support.ReloadableResourceBundleMessageSource" >
+        <property name="basenames">
+            <list>
+                <value>classpath:messages/validationMessage</value>
+            </list>
+        </property>
+        <property name="fileEncodings" value="utf-8" />
+        <!-- 定时刷新资源文件间隔时间 -->
+        <property name="cacheSeconds" value="1800" />
+        <property name="fallbackToSystemLocale">
+            <!-- 如果找不到相应的ResourceBundle，系统始终会显示为中文的Resource -->
+            <!-- <value>true</value> -->
+
+            <!-- 取消始终显示中文Resource -->
+            <value>false</value>
+        </property>
+        <!-- 在ResourceBundle中找不到messageKey时抛出异常 -->
+        <property name="useCodeAsDefaultMessage" value="false" />
+    </bean>
+
+
+    <!-- 注册消息信息文件 -->
+    <bean id="messageSource" 
+            class="org.springframework.context.support.ReloadableResourceBundleMessageSource" >
+        <property name="basenames">
+            <list>
+                <value>classpath:messages/message</value>
+            </list>
+        </property>
+        <property name="fileEncodings" value="utf-8" />
+        <!-- 定时刷新资源文件间隔时间 -->
+        <property name="cacheSeconds" value="1800" />
+        <property name="fallbackToSystemLocale">
+            <!-- 如果找不到相应的ResourceBundle，系统始终会显示为中文的Resource -->
+            <!-- <value>true</value> -->
+
+            <!-- 取消始终显示中文Resource -->
+            <value>false</value>
+        </property>
+        <!-- 在ResourceBundle中找不到messageKey时抛出异常 -->
+        <property name="useCodeAsDefaultMessage" value="false" />
+    </bean>
+
+
+</beans>

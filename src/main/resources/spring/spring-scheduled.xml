@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/task
+    http://www.springframework.org/schema/task/spring-task.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 定时器开关-->
+    <task:annotation-driven />
+
+    <bean id="xmlTask" class="com.ssm.scheduled.service.XmlScheduledService"></bean>
+
+    <task:scheduled-tasks>  
+        <!--  这里表示的是每隔五秒执行一次  -->
+        <task:scheduled ref="xmlTask" method="show" cron="*/5 * * * * ?" />
+        <task:scheduled ref="xmlTask" method="print" cron="*/10 * * * * ?"/>
+    </task:scheduled-tasks>  
+
+    <!-- 自动扫描的包名 -->    
+    <context:component-scan base-package="com.ssm.scheduled.service" />
+
+    <!-- 定时器配置 
+    task:executor/@pool-size：可以指定执行线程池的初始大小、最大大小 
+    task:executor/@queue-capacity：等待执行的任务队列的容量 
+    task:executor/@rejection-policy：当等待队已满时的策略，分为丢弃、由任务执行器直接运行等方式 
+   -->
+    <!--
+    <task:scheduler id="scheduler" pool-size="10" />  
+    <task:executor id="executor" keep-alive="3600" pool-size="100-200" 
+    queue-capacity="500" rejection-policy="CALLER_RUNS" /> 
+    <task:annotation-driven executor="executor" scheduler="scheduler" />
+   -->
+
+</beans>
