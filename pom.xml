@@ -37,7 +37,7 @@
 		<!-- ehcache -->
 		<ehcache.version>3.1.1</ehcache.version>
 		<!-- ehcache-core -->
-		<ehcache-core.version>2.6.11</ehcache-core.version>
+		<ehcache-core.version>2.6.10</ehcache-core.version>
 		<!-- Spring+Ehcache -->
 		<ehcache-spring-annotations.version>1.2.0</ehcache-spring-annotations.version>
 		<guava.version>19.0</guava.version>

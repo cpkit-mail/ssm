@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ssm.kernel.model.User;
 import com.ssm.kernel.service.IUserService;
 
 @Controller
@@ -37,4 +38,21 @@ public class LoginController {
         return "redirect:" + url;
     }
 
+    @RequestMapping(value = "/login2", method = RequestMethod.POST)
+    public String toIndex2(HttpServletRequest request,User user) {
+
+        if (StringUtils.isEmpty(user.getUserName())) {
+            throw new IllegalArgumentException("user不能为空");
+        }
+
+        request.getSession().setAttribute("user", user.getUserName());
+
+        // 登陆的验证通过后,在从session里获取前画面的url
+        String url = (String) request.getSession().getAttribute("redirectUrl");
+        request.getSession().removeAttribute("redirectUrl");
+
+        // 转向到前画面
+        return "redirect:" + url;
+    }
+    
 }

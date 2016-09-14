@@ -119,4 +119,7 @@
     </aop:config>
 
 
+    <!-- 缓存 -->
+    <import resource="spring-ehcache.xml"/>
+
 </beans>

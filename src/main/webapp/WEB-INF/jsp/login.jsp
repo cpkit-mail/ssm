@@ -16,6 +16,13 @@
         <input type="submit" value="Submit" />
 	</form>
 	
+    <form action="${pageContext.request.contextPath}/interceptor/login2" method="post" >
+        <input type="text" name="userName" value="user"/> <br>
+        
+        <input type="password" name="password" value="passward" />
+        
+        <input type="submit" value="Submit" />
+    </form>
 
 </body>
 </html>
