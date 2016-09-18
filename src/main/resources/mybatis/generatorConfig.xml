@@ -7,6 +7,7 @@
 
     <!--导入属性配置 -->
     <properties resource="mybatis/generator.properties"></properties>
+    <!-- <properties resource="jdbc/jdbc.properties"></properties> -->
 
     <!--指定特定数据库的jdbc驱动jar包的位置 -->
     <classPathEntry location="${jdbc.driverLocation}"/>
@@ -63,14 +64,30 @@
                enableSelectByExample="false"
                selectByExampleQueryId="false">
         </table> -->
-        <table tableName="case"
+<!--         <table tableName="case"
                domainObjectName="Case"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false">
+        </table> -->
+        <table tableName="case_type"
+               domainObjectName="CaseType"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
         </table>
+<!--         <table tableName="case"
+               domainObjectName="Case"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table> -->
 
     </context>
 </generatorConfiguration>

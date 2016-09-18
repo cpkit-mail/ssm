@@ -79,7 +79,7 @@
     <!-- 配置事务管理器 -->
     <bean id="mybatisTransactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
-          p:dataSource-ref="dataSource"/>
+          p:dataSource-ref="dataSource" />
 
     <!-- 注解方式配置事物 -->
     <!-- <tx:annotation-driven transaction-manager="mybatisTransactionManager" /> -->

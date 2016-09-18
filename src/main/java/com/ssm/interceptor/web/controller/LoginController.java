@@ -39,7 +39,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login2", method = RequestMethod.POST)
-    public String toIndex2(HttpServletRequest request,User user) {
+    public String toIndex2(HttpServletRequest request, User user) {
 
         if (StringUtils.isEmpty(user.getUserName())) {
             throw new IllegalArgumentException("user不能为空");
@@ -54,5 +54,5 @@ public class LoginController {
         // 转向到前画面
         return "redirect:" + url;
     }
-    
+
 }

@@ -112,5 +112,7 @@
     <import resource="spring-validator.xml"/>
     <!-- 定时器 -->
     <import resource="spring-scheduled.xml"/>
+    <!-- aop -->
+    <import resource="spring-aop.xml"/>
 
 </beans>
