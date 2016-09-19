@@ -18,13 +18,16 @@
 
 
 
+    <!-- 配置aop切面 -->
     <bean id="checkAspectExecutor" class="com.ssm.aop.aspect.CheckAspect" />
     <aop:config>
         <aop:aspect id="checkAspect" ref="checkAspectExecutor">
-            <aop:pointcut id="checkPointcut" expression="execution(* com.ssm.aop.web.controller.*(..))"/>
-            <aop:around pointcut-ref="checkPointcut" method="aroundCheck" />
+            <aop:pointcut id="checkPointcut" expression="execution(* com.ssm.aop.web.controller.*.*(..))"/>
+            <aop:before pointcut-ref="checkPointcut" method="beforeCheck" />
         </aop:aspect>
     </aop:config>
 
+    <!-- 添加Spring自动扫描被@Aspect标注的切面 -->
+    <aop:aspectj-autoproxy/>
 
 </beans>

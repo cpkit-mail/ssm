@@ -120,6 +120,7 @@
 
 
     <!-- 缓存 -->
+    <!-- mybatis缓存配置要放到这个 -->
     <import resource="spring-ehcache.xml"/>
 
 </beans>
