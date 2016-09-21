@@ -59,17 +59,31 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!-- 配置扫描Domain的包路径 -->
-        <property name="typeAliasesPackage" value="com.ssm.kernel.model"/>
+        <property name="typeAliasesPackage" value="com.ssm.*.model"/>
         <!-- 配置mybatis配置文件的位置 -->
         <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
         <!-- 配置扫描Mapper XML的位置 -->
         <!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->
         <property name="mapperLocations" value="classpath*:mybatis/mapper/*.xml"/>
+        <!-- 添加分页插件，添加内容与mybatis-config相同，两者选其一即可 -->
+        <!--
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageHelper">
+                    <property name="properties">
+                        <value>
+                            dialect=mysql
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
+        -->
     </bean>
 
     <!-- 配置扫描Mapper接口的包路径 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.ssm.kernel.dao"/>
+        <property name="basePackage" value="com.ssm.*.dao"/>
     </bean>
 
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
@@ -114,7 +128,7 @@
 
     <aop:config>
         <aop:pointcut id="txPointcut"
-                      expression="execution(public * com.ssm.kernel.service.*.*(..))"/>
+                      expression="execution(public * com.ssm.*.service.*.*(..))"/>
         <aop:advisor pointcut-ref="txPointcut" advice-ref="txAdvice"/>
     </aop:config>
 

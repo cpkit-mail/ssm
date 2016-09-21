@@ -36,11 +36,17 @@
 		<mybatis-ehcache.version>1.0.0</mybatis-ehcache.version>
 		<!-- ehcache -->
 		<ehcache.version>3.1.1</ehcache.version>
+
+		<!-- 添加google缓存注解 -->
 		<!-- ehcache-core -->
 		<ehcache-core.version>2.6.10</ehcache-core.version>
 		<!-- Spring+Ehcache -->
 		<ehcache-spring-annotations.version>1.2.0</ehcache-spring-annotations.version>
 		<guava.version>19.0</guava.version>
+
+		<!-- mybatis分页 -->
+		<!-- pagehelper -->
+		<pagehelper.version>4.1.6</pagehelper.version>
 
 		<!-- mysql -->
 		<mysql.version>5.1.39</mysql.version>
@@ -191,6 +197,7 @@
 			<version>${ehcache.version}</version>
 		</dependency>
 
+		<!-- 添加google缓存注解 -->
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>
 			<artifactId>ehcache-core</artifactId>
@@ -207,6 +214,14 @@
 			<groupId>com.googlecode.ehcache-spring-annotations</groupId>
 			<artifactId>ehcache-spring-annotations</artifactId>
 			<version>${ehcache-spring-annotations.version}</version>
+		</dependency>
+
+
+		<!-- mybatis分页 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>${pagehelper.version}</version>
 		</dependency>
 
 
