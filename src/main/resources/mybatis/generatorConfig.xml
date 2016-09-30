@@ -71,7 +71,7 @@
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false">
-        </table> -->
+        </table>
         <table tableName="case_type"
                domainObjectName="CaseType"
                enableCountByExample="false"
@@ -79,15 +79,15 @@
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false">
-        </table>
-<!--         <table tableName="case"
-               domainObjectName="Case"
+        </table> -->
+        <table tableName="yl_m_caseinfo"
+               domainObjectName="YLMCaseInfo"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false">
-        </table> -->
+        </table>
 
     </context>
 </generatorConfiguration>
