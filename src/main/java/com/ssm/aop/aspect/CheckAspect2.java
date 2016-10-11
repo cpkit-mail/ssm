@@ -37,7 +37,7 @@ public class CheckAspect2 {
     // Before(前)  org.apringframework.aop.MethodBeforeAdvice
     // After-returning(返回后) org.springframework.aop.AfterReturningAdvice
     // After-throwing(抛出后) org.springframework.aop.ThrowsAdvice
-    // Arround(周围) org.aopaliance.intercept.MethodInterceptor
+    // Around(周围) org.aopaliance.intercept.MethodInterceptor
     // Introduction(引入) org.springframework.aop.IntroductionInterceptor
     // 指定了运行时的通知
     @Around("sleeppoint()")
@@ -74,9 +74,9 @@ public class CheckAspect2 {
         // if (args[0] == null || !(args[0] instanceof User)) {
         // throw new AuthorizationException();
         // }
+        // call.proceed();
         // User user = (User) (args[0]);
-        //
+        // // 返回的对象类型要与拦截的方法的返回值类型一致
         // return user;
-
     }
 }
