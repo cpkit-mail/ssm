@@ -305,6 +305,7 @@
 		<finalName>ssm</finalName>
 
 		<plugins>
+			<!-- 打包编译时先添加lib下的jar包后编译（如有自己添加jar包的情況下使用） -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -313,6 +314,10 @@
 					</compilerArguments>
 				</configuration>
 			</plugin>
+
+			<!-- mybatis自动代码生成插件 -->
+			<!-- maven添加执行命令mybatis-generator:generate -e -X -->
+			<!-- 可以生成dao,mapper,model -->
 			<plugin>
 				<groupId>org.mybatis.generator</groupId>
 				<artifactId>mybatis-generator-maven-plugin</artifactId>
@@ -324,6 +329,26 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
+		<!-- maven打包时资源文件的路径，不写时默认是src/main/resources -->
+		<resources>
+			<!-- 打包时要包含java文件夹下的.xml文件时添加,比如mybatis生成的xml文件在java目录下 -->
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+			<!-- 打包时要包含resources所有文件 -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 
 	</build>
 </project>
