@@ -21,7 +21,7 @@
 		<spring.version>4.3.2.RELEASE</spring.version>
 
 		<!-- Spring validator -->
-		<hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
+		<hibernate-validator.version>5.3.5.Final</hibernate-validator.version>
 
 
 
