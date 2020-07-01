@@ -49,7 +49,7 @@
 		<pagehelper.version>4.1.6</pagehelper.version>
 
 		<!-- mysql -->
-		<mysql.version>5.1.39</mysql.version>
+		<mysql.version>8.0.16</mysql.version>
 
 		<!-- commons -->
 		<commons-dbcp.version>1.4</commons-dbcp.version>
